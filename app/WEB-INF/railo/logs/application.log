@@ -1,0 +1,2 @@
+"Severity","ThreadID","Date","Time","Application","Message"
+"ERROR","web-0","04/06/2015","18:38:47","","Page /index.cfm [/Users/stacy/Downloads/Railo/webapps/ROOT/index.cfm] not found"

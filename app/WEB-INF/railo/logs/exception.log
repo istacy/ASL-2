@@ -1,0 +1,27 @@
+"Severity","ThreadID","Date","Time","Application","Message"
+"ERROR","web-0","04/06/2015","18:38:47","","Page /index.cfm [/Users/stacy/Downloads/Railo/webapps/ROOT/index.cfm] not found
+	at railo.runtime.PageSourceImpl.loadPage(PageSourceImpl.java:873):873
+	at railo.runtime.PageContextImpl.doInclude(PageContextImpl.java:809):809
+	at railo.runtime.listener.ClassicAppListener._onRequest(ClassicAppListener.java:39):39
+	at railo.runtime.listener.MixedAppListener.onRequest(MixedAppListener.java:19):19
+	at railo.runtime.PageContextImpl.execute(PageContextImpl.java:2113):2113
+	at railo.runtime.PageContextImpl.execute(PageContextImpl.java:2081):2081
+	at railo.runtime.engine.CFMLEngineImpl.serviceCFML(CFMLEngineImpl.java:318):318
+	at railo.loader.servlet.CFMLServlet.service(CFMLServlet.java:29):29
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728):728
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305):305
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210):210
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222):222
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123):123
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171):171
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99):99
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953):953
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118):118
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408):408
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1023):1023
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:589):589
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310):310
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895):895
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918):918
+	at java.lang.Thread.run(Thread.java:695):695
+"
