@@ -49,8 +49,21 @@
         <cfabort>
     </cffunction>
     
-    <cffunction name="register">
-    	
+    <cffunction name="register" hint="Page display of form">
+		
+    </cffunction>
+    
+    <cffunction name="registerUser" hint="Add a new user">
+    	<cfscript>
+			user = model("user").findOne(where="email='#params.email#'");
+			if(isBoolean(user)){   
+				user = model("user").new(params);
+				user.save();
+				redirectTo(route="home",success="You successfully registered.");
+			} else {
+				redirectTo(route="home",error="This email is already registered.");
+			}
+		</cfscript>
     </cffunction>
     
     <cffunction name="myAccount">

@@ -8,8 +8,9 @@
 	<body>
     <div id="fb-root"></div>
 	
-      
-    
+  
+        #includePartial("../flash")#
+
     	<div class="wrapper">
         	<div class="container">
             	#includePartial('../topmenu')#
