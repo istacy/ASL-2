@@ -8,7 +8,7 @@
 	<body>
     <div id="fb-root"></div>
 	
-    <script src="/javascripts/app.js"></script>  
+      
     
     	<div class="wrapper">
         	<div class="container">
@@ -20,6 +20,7 @@
     	
      <script src="/javascripts/jquery-2.1.3.min.js"></script> 
 	 <script src="/javascripts/bootstrap.min.js"></script>  
+     #includeContent("javascript")#
 	</body>
 </html>
 </cfoutput>

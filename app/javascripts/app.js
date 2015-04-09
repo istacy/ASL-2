@@ -52,7 +52,7 @@
   // These three cases are handled in the callback function.
 
   FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
+    //statusChangeCallback(response);
   });
 
   };
@@ -78,7 +78,11 @@
 			url: "/index.cfm?controller=pages&action=adduser",
 			data: response
 		}).done(function( json ) {
-		
+			var returnData = jQuery.parseJSON(json);
+			console.log(returnData.MESSAGE);
+			if (returnData.SUCCESSFUL) {
+				window.location.href = "/index.cfm?controller=pages&action=myAccount";
+			}
 		});
 
       console.log('Successful login for: ' + response.name);
