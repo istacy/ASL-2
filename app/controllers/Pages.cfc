@@ -1,6 +1,15 @@
 <cfcomponent extends="Controller" output="false">
 	<cffunction name="init">
-    	
+    	<cfscript>
+			filters(through="$authenticate",only="myAccount,galleries");
+		</cfscript>
+        
+    </cffunction>
+    
+    <cffunction name="$authenticate">
+    	<cfif not authenticate()>
+        	<cfset redirectTo(route="logout")>
+        </cfif>
     </cffunction>
     
     <cffunction name="index">
@@ -32,13 +41,27 @@
 		</cfscript>
     </cffunction>
     
+    <cffunction name="createUser">
+    	<cfset user = model('user').new(params)>
+        <cfset user.save()>
+        
+    	<cfdump var="#params.email#">
+        <cfabort>
+    </cffunction>
+    
     <cffunction name="myAccount">
+    	
+    </cffunction>
+    
+    <cffunction name="galleries">
+    
+    </cffunction>
+    
+    <cffunction name="logout">
     	<cfscript>
-			gallery = model("gallery").new();
-			gallery.name = 'test';
-			gallery.userid = session.user.id;
-			gallery.save();
-		</cfscript>
+        	structDelete(session,"user");
+			redirectTo(route="home");
+        </cfscript>
     </cffunction>
     
 </cfcomponent>

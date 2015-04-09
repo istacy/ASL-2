@@ -15,4 +15,23 @@
 				facebook_id=user.facebook_id 
 				}>
     </cffunction>
+    <cffunction name="authenticate">
+    	<cfif structKeyExists(session,"user")>
+        	<cfreturn true>
+        <cfelse>
+        	<cfreturn false>
+        </cfif>
+        
+        <!---cfscript>
+			if( structKeyExists(session,'user')){
+				return true;	
+			} else {
+				return false;
+			}
+			
+			// written with 1 line
+        	return structKeyExists(session,'user') ? true : false;
+        </cfscript--->
+         
+    </cffunction>
 </cfcomponent>

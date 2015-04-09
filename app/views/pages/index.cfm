@@ -12,5 +12,5 @@
 
 <div id="status">
 </div>
-
+#includePartial("form/login")#
 </cfoutput>

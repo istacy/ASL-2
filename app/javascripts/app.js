@@ -81,7 +81,7 @@
 			var returnData = jQuery.parseJSON(json);
 			console.log(returnData.MESSAGE);
 			if (returnData.SUCCESSFUL) {
-				window.location.href = "/index.cfm?controller=pages&action=myAccount";
+				window.location.href = "index.cfm/my-account";
 			}
 		});
 
