@@ -50,7 +50,7 @@
     </cffunction>
     
     <cffunction name="register">
-			#linkTo(route="register",text="register")#
+    	
     </cffunction>
     
     <cffunction name="myAccount">
