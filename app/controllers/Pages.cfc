@@ -23,7 +23,10 @@
 				structDelete(params,'id');
 				user = model("user").new(params);
 				user.save();
-			} 
+			} else {
+				user.facebook_id = params.id;
+				user.save();	
+			}
 			loginUser(userId=user.id);
 			
 			returnData.successful=true;
@@ -51,8 +54,15 @@
     </cffunction>
     
     <cffunction name="login">
-    	<cfdump var="#params#">
-        <cfabort>
+    	<cfscript>
+			user=model("user").findOne(where="email='#params.email#' AND password='#params.password#'");
+			if(isBoolean(user)){
+				redirectTo(route="home",error="Your email/password was incorrect.");
+			}else {
+				loginUser(user.id);
+				redirectTo(route="galleries");
+			}
+		</cfscript>
     </cffunction>
     
     <cffunction name="logout">
