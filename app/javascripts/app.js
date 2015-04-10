@@ -81,7 +81,7 @@
 			var returnData = jQuery.parseJSON(json);
 			console.log(returnData.MESSAGE);
 			if (returnData.SUCCESSFUL) {
-				window.location.href = "index.cfm/my-account";
+				window.location.href = "index.cfm/galleries";
 			}
 		});
 

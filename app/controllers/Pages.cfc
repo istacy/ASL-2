@@ -1,15 +1,6 @@
 <cfcomponent extends="Controller" output="false">
 	<cffunction name="init">
-    	<cfscript>
-			filters(through="$authenticate",only="myAccount,galleries");
-		</cfscript>
         
-    </cffunction>
-    
-    <cffunction name="$authenticate">
-    	<cfif not authenticate()>
-        	<cfset redirectTo(route="logout")>
-        </cfif>
     </cffunction>
     
     <cffunction name="index">
@@ -24,7 +15,7 @@
     <cffunction name="addUser">
     	<cfscript>
 			renderNothing();
-			user = model('user').findOne(where="facebook_id='#params.id#'");
+			user = model('user').findOne(where="email='#params.email#'");
 			
 			// returns false if user doens't exist
 			if(isboolean(user)) {
@@ -41,14 +32,6 @@
 		</cfscript>
     </cffunction>
     
-    <cffunction name="createUser">
-    	<cfset user = model('user').new(params)>
-        <cfset user.save()>
-        
-    	<cfdump var="#params.email#">
-        <cfabort>
-    </cffunction>
-    
     <cffunction name="register" hint="Page display of form">
 		
     </cffunction>
@@ -59,19 +42,17 @@
 			if(isBoolean(user)){   
 				user = model("user").new(params);
 				user.save();
-				redirectTo(route="home",success="You successfully registered.");
+				loginUser(user.id);
+				redirectTo(route="galleries",success="You successfully registered.");
 			} else {
 				redirectTo(route="home",error="This email is already registered.");
 			}
 		</cfscript>
     </cffunction>
     
-    <cffunction name="myAccount">
-    	
-    </cffunction>
-    
-    <cffunction name="galleries">
-    
+    <cffunction name="login">
+    	<cfdump var="#params#">
+        <cfabort>
     </cffunction>
     
     <cffunction name="logout">
