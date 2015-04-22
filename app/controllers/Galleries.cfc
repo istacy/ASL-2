@@ -2,7 +2,8 @@
 	<cffunction name="init">
     	<cfscript>
 			filters(through="$authenticate");
-			filters(through="$getGallery",only="editGallery,updateGallery,deleteGallery");
+			filters(through="$getGallery",only="editGallery,updateGallery,deleteGallery,renderGallery");
+			filters(through="$getPictures",only="editGallery,renderGallery");
 		</cfscript>
         
     </cffunction>
@@ -15,6 +16,12 @@
     
     <cffunction name="$getGallery">
     	<cfset gallery=model("gallery").findByKey(params.key)>
+    </cffunction>
+    
+    <cffunction name="$getPictures">
+    	<cfscript>
+			pictures=model("picture").findAll(where="galleryId=#gallery.id#");
+		</cfscript>
     </cffunction>
     
     <cffunction name="index">
@@ -37,9 +44,7 @@
     </cffunction>
     
     <cffunction name="editGallery" hint="Edit form for the gallery">
-    	<cfscript>
-			pictures=model("picture").findAll(where="galleryId=#gallery.id#");
-		</cfscript>
+    	
     </cffunction>
     
     <cffunction name="updateGallery" hint="Update database data">
@@ -54,6 +59,12 @@
 			gallery.delete();
 			redirectTo(action="index",success="Your gallery was deleted.");
 		</cfscript>
+    </cffunction>
+    
+    <cffunction name="renderGallery" hint="Displays the slideshow">
+    	<cfset contentFor(stylesheets='<link rel="stylesheet" href="/stylesheets/flexslider.css">')>
+        <cfset contentFor(javascript='<link rel="stylesheet" href="/stylesheets/flexslider.css">')>
+        <cfset contentFor(javascript='<script>$(".slideshow").flexslider();</script>')>
     </cffunction>
     
 </cfcomponent>

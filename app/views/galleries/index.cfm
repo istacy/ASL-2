@@ -6,6 +6,8 @@
         #linkTo(action="editGallery",key=galleries.id,text=galleries.name)#
         |
         #linkTo(action="deleteGallery",key=galleries.id,text="delete")#
+         |
+        #linkTo(action="renderGallery",key=galleries.id,text="render")#
         </li>
         
     </cfloop>

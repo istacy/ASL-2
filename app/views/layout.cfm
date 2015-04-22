@@ -4,6 +4,7 @@
 <head>
 	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
     <link href="/stylesheets/main.css" rel="stylesheet" />
+    #includeContent("stylesheets")#
 </head>
 
 	<body>

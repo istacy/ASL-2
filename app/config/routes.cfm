@@ -9,3 +9,6 @@
 <cfset addRoute(name="galleries", pattern="/galleries", controller="galleries", action="index")>
 <cfset addRoute(name="newGallery", pattern="/new-gallery", controller="galleries", action="newGallery")>
 <cfset addRoute(name="updateGallery", pattern="/update-gallery/[key]", controller="galleries", action="updateGallery")>
+<cfset addRoute(name="editGallery", pattern="/edit-gallery/[key]", controller="galleries", action="editGallery")>
+<cfset addRoute(name="deletePicture", pattern="/delete-picture/[galleryId]/[key]", controller="pictures", action="deletePicture")>
+<cfset addRoute(name="editPicture", pattern="/edit-picture/[galleryId]/[key]", controller="pictures", action="editPicture")>
