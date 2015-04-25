@@ -63,7 +63,7 @@
     
     <cffunction name="renderGallery" hint="Displays the slideshow">
     	<cfset contentFor(stylesheets='<link rel="stylesheet" href="/stylesheets/flexslider.css">')>
-        <cfset contentFor(javascript='<link rel="stylesheet" href="/stylesheets/flexslider.css">')>
+        <cfset contentFor(javascript='<script type="text/javascript" src="javascripts/jquery.flexslider.js"></script>')>
         <cfset contentFor(javascript='<script>$(".slideshow").flexslider();</script>')>
     </cffunction>
     
