@@ -316,6 +316,10 @@
 		{
 			loc.attributes.for = arguments.id;
 		}
+		if (StructKeyExists(arguments, "labelClass"))
+		{
+			loc.attributes.class = arguments.labelClass;
+		}
 		loc.returnValue &= $tag(name="label", attributes=loc.attributes);
 		loc.returnValue &= arguments.label;
 		loc.returnValue &= "</label>";

@@ -1,4 +1,6 @@
-<h1>Sign Up</h1>
+<h1 class="text-center">Sign Up</h1>
 <cfoutput>
-	#includePartial("form/register")#
+	#startContent()#
+		#includePartial("form/register")#
+    #endContent()#
 </cfoutput>

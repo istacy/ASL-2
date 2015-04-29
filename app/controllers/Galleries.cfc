@@ -67,4 +67,21 @@
         <cfset contentFor(javascript='<script type="text/javascript" src="/javascripts/render.js"></script>')>
     </cffunction>
     
+    <cffunction name="displayList">
+    	<cfoutput>
+            <ul>
+            <cfloop query="galleries">
+                <li>
+                #linkTo(action="editGallery",key=galleries.id,text=galleries.name)#
+                |
+                #linkTo(action="deleteGallery",key=galleries.id,text="delete")#
+                 |
+                #linkTo(action="renderGallery",key=galleries.id,text="render")#
+                </li>
+                
+            </cfloop>
+            </ul>
+        </cfoutput>
+    </cffunction>
+    
 </cfcomponent>

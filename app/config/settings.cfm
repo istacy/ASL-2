@@ -14,3 +14,11 @@
 --->
 
 <cfset set(dataSourceName="stopmotion365")>
+
+<cfset set(functionName="textFieldTag", labelPlacement="before", prependToLabel="<div class=""form-group"">", append="</div>")>
+
+<cfset set(functionName="textField", labelPlacement="before", prependToLabel="<div class=""form-group"">", append="</div>")>
+
+<!---<cfset set(functionName="dateSelect", labelPlacement="before", prependToLabel="<div class=""form-group"">", append="</div>")>--->
+
+<cfset set(functionName="passwordFieldTag", labelPlacement="before", prependToLabel="<div class=""form-group"">", append="</div>")>

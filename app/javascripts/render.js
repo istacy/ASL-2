@@ -15,7 +15,7 @@ function startSlide(){
 		touch: false,
 		keyboard: false,
 		animationLoop: false,
-		animationSpeed: 100,
+		animationSpeed: 0,
 		initDelay: 2000
 	});
 }
