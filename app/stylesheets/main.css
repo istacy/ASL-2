@@ -7,6 +7,7 @@ body {
 	background-image: url('/images/black-linen.png');
 	background-repeat: repeat;
 	color: #FFF;
+	text-align: center;
 }
 .navbar {
 	background: #424242;
@@ -70,6 +71,7 @@ img.home-img {
   text-align: center;
   border-top: 3px solid black;
   padding: 10px;
+  margin-top: 30px;
 }
 .sm-img {
 	position: relative;
@@ -115,12 +117,26 @@ a#replay-slide {
 span.glyphicon.glyphicon-pencil {
   float: right;
 }
+span.glyphicon.glyphicon-trash {
+  float: left;
+}
 img {
 	padding: 15px;
 }
 .form-group {
   margin-bottom: 15px;
   margin-top: 15px;
+}
+
+li {
+  list-style-type: none;
+  font-size: 18px;
+  padding: 10px 0;
+}
+.flexslider .slides img {
+  width: 100%;
+  display: block;
+  padding: 0 !important;
 }
 
 @media (max-width: 767px) {
